@@ -1,0 +1,54 @@
+{
+  "easy": [
+    "Get 250k with Overlord",
+    "Get 300k with Predator",
+    "Get 350k with Fighter",
+    "Get 400k with Necromancer",
+    "Get 450k with Spreadshot",
+    "Get 500k with Pentashot",
+    "Get 300k with Spike",
+    "Get 350k with Rocketeer",
+    "Get 400k with Glider",
+    "Get 450k with Triplet",
+    "Get 500k with Booster"
+  ],
+  "medium": [
+    "Get 500k with Overlord",
+    "Get 550k with Predator",
+    "Get 600k with Fighter",
+    "Get 650k with Necromancer",
+    "Get 700k with Spreadshot",
+    "Get 750k with Pentashot",
+    "Get 600k with Spike",
+    "Get 650k with Rocketeer",
+    "Get 700k with Glider",
+    "Get 750k with Triplet",
+    "Get 700k with Booster"
+  ],
+  "hard": [
+    "Get 750k with Overlord",
+    "Get 800k with Predator",
+    "Get 850k with Fighter",
+    "Get 900k with Necromancer",
+    "Get 950k with Spreadshot",
+    "Get 1M with Pentashot",
+    "Get 850k with Spike",
+    "Get 900k with Rocketeer",
+    "Get 950k with Glider",
+    "Get 1M with Triplet",
+    "Get 1M with Booster"
+  ],
+  "elite": [
+    "Get 1M with Overlord",
+    "Get 1.2M with Predator",
+    "Get 1.4M with Fighter",
+    "Get 1.6M with Necromancer",
+    "Get 1.8M with Spreadshot",
+    "Get 2M with Pentashot",
+    "Get 1.5M with Spike",
+    "Get 1.7M with Rocketeer",
+    "Get 1.8M with Glider",
+    "Get 2M with Triplet",
+    "Get 2M with Booster"
+  ]
+}
