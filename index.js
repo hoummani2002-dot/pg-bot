@@ -18,7 +18,7 @@ const client = new Client({
 });
 
 const TOKEN = process.env.TOKEN;
-const LEADERBOARD_CHANNEL_ID = "1502061975251714240";
+const LEADERBOARD_CHANNEL_ID = "1502736656015429764";
 const UPDATE_SECONDS = 60;
 const COIN_MANAGER_ROLE_NAME = "PG bot Coin Manager";
 
@@ -235,10 +235,19 @@ function buildLeaderboardEmbed(guild) {
         const role = guild.roles.cache.find(r => r.name === rank);
         const rankText = role ? `<@&${role.id}>` : `**${rank}**`;
 
-        text += `\`${index + 1}.\` <@${userId}> • **${coins.toLocaleString()}◎** • ${rankText}\n`;
+        let medal = "🔹";
+
+        if (index === 0) medal = "🥇";
+        else if (index === 1) medal = "🥈";
+        else if (index === 2) medal = "🥉";
+
+        text += `${medal} **#${index + 1}** <@${userId}>\n`;
+        text += `> 💰 **${coins.toLocaleString()}◎** • ${rankText}\n\n`;
     });
 
-    if (!text) text = "No leaderboard yet.";
+    if (!text) {
+        text = "```No players in leaderboard yet.```";
+    }
 
     const secondsLeft = Math.max(
         0,
@@ -246,10 +255,20 @@ function buildLeaderboardEmbed(guild) {
     );
 
     return new EmbedBuilder()
-        .setTitle("🏆 Top 10 PG Players")
-        .setDescription(text)
-        .setColor("#0099ff")
-        .setFooter({ text: `Next update in ${secondsLeft}s` });
+        .setTitle("🏆 PG GLOBAL LEADERBOARD")
+        .setDescription(
+            "━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "🔥 **Top 10 PG Players** 🔥\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            text +
+            "━━━━━━━━━━━━━━━━━━━━━━"
+        )
+        .setColor("#FFD700")
+        .setThumbnail(guild.iconURL({ dynamic: true }))
+        .setFooter({
+            text: `⏳ Next update in ${secondsLeft}s • PG Bot`
+        })
+        .setTimestamp();
 }
 
 async function updateLeaderboard(channel) {
@@ -265,7 +284,7 @@ async function updateLeaderboard(channel) {
                 m =>
                     m.author.id === client.user.id &&
                     m.embeds.length > 0 &&
-                    m.embeds[0].title?.includes("Top 10 PG Players")
+                    m.embeds[0].title?.includes("PG GLOBAL LEADERBOARD")
             );
         }
 
