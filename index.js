@@ -242,7 +242,7 @@ function buildLeaderboardEmbed(guild) {
         else if (index === 2) medal = "🥉";
 
         text += `${medal} **#${index + 1}** <@${userId}>\n`;
-        text += `> 💰 **${coins.toLocaleString()}◎** • ${rankText}\n\n`;
+       text += `> **${coins.toLocaleString()}◎** • ${rankText}\n\n`;
     });
 
     if (!text) {
@@ -255,10 +255,8 @@ function buildLeaderboardEmbed(guild) {
     );
 
     return new EmbedBuilder()
-        .setTitle("🏆 PG GLOBAL LEADERBOARD")
+        .setTitle("🏆 Leaderboard")
         .setDescription(
-            "━━━━━━━━━━━━━━━━━━━━━━\n" +
-            "🔥 **Top 10 PG Players** 🔥\n" +
             "━━━━━━━━━━━━━━━━━━━━━━\n\n" +
             text +
             "━━━━━━━━━━━━━━━━━━━━━━"
