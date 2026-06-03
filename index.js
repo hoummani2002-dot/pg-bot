@@ -152,29 +152,29 @@ function generateWeeklyMissions(force = false) {
     const pool = loadMissionPool();
     if (!pool) return;
 
-    const easy = pickRandom(pool.easy || [], 3).map(m => ({
-        type: "Easy",
-        text: m,
-        locked: false
-    }));
+   const easy = pickRandom(pool.easy || [], 5).map(m => ({
+    type: "Easy",
+    text: m,
+    locked: false
+}));
 
-    const medium = pickRandom(pool.medium || [], 3).map(m => ({
-        type: "Medium",
-        text: m,
-        locked: false
-    }));
+const medium = pickRandom(pool.medium || [], 5).map(m => ({
+    type: "Medium",
+    text: m,
+    locked: false
+}));
 
-    const hard = pickRandom(pool.hard || [], 3).map(m => ({
-        type: "Hard",
-        text: m,
-        locked: false
-    }));
+const hard = pickRandom(pool.hard || [], 5).map(m => ({
+    type: "Hard",
+    text: m,
+    locked: false
+}));
 
-    const elite = pickRandom(pool.elite || [], 2).map(m => ({
-        type: "Elite",
-        text: m,
-        locked: false
-    }));
+const elite = pickRandom(pool.elite || [], 5).map(m => ({
+    type: "Elite",
+    text: m,
+    locked: false
+}));
 
     data.weeklyMissions = {
         weekKey,
@@ -380,7 +380,7 @@ const commands = [
         options: [
             {
                 name: "number",
-                description: "Mission number 1-11",
+                description: "Mission number 1-20",
                 type: ApplicationCommandOptionType.Integer,
                 required: true
             }
